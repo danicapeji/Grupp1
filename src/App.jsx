@@ -8,7 +8,6 @@ import ProductPage from './pages/ProductPage';
 import OrderConfirmationPage from './pages/OrderConfirmationPage';
 
 const App = () => {
-
   return (
     <BrowserRouter>
     <Navigation />
@@ -21,7 +20,7 @@ const App = () => {
     </Routes>
     <Footer/>
     </BrowserRouter>
-  )
-}
+  );
+};
 
-export default App
+export default App;
