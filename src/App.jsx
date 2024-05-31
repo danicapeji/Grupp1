@@ -4,6 +4,7 @@ import ShopPage from './pages/ShopPage';
 import CartPage from './pages/ShoppingCartPage';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import FetchData from './components/FetchData';
 
 const App = () => {
 
@@ -11,6 +12,7 @@ const App = () => {
     <BrowserRouter>
     <Navigation />
     <Routes>
+      <Route path= "/FetchData" Component={FetchData} />
       <Route path="/" element={<LandingPage />} />        
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/cart" element={<CartPage />} />
