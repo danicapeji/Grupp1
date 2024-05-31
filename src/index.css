@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-violet-300;
+  @apply bg-zinc-100;
 }
 
 :root {
