@@ -13,7 +13,7 @@ const ShopPage = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-20">
       {products.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
