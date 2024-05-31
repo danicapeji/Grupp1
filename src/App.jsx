@@ -4,6 +4,7 @@ import ShopPage from './pages/ShopPage';
 import CartPage from './pages/ShoppingCartPage';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
+import ProductPage from './pages/ProductPage';
 
 const App = () => {
 
@@ -13,6 +14,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={<LandingPage />} />        
       <Route path="/shop" element={<ShopPage />} />
+      <Route path="/product/:id" element={<ProductPage />} />
       <Route path="/cart" element={<CartPage />} />
     </Routes>
     <Footer/>
