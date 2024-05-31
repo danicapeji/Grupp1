@@ -26,15 +26,17 @@ const Footer = () => {
           <p>44192 Tokholm</p>
         </div>
         <div className="container mx-auto text-center mt-4">
-          <div className="flex flex-col md:flex-row items-center">
-            <p className="mb-4 md:mb-0 md:mr-6">
+          <div className="flex flex-col md:flex-column text-center">
+            <p className="mb-4">
               Follow us on social media and other platforms!
             </p>
+            <div className="flex justify-center space-x-2">
+              <button className="bg-white text-blue-500 p-3 m-2 rounded-full"></button>
+              <button className="bg-white text-blue-500 p-3 m-2 rounded-full"></button>
+              <button className="bg-white text-blue-500 p-3 m-2 rounded-full"></button>
+              <button className="bg-white text-blue-500 p-3 m-2 rounded-full"></button>
+            </div>
           </div>
-          <button className="bg-white text-blue-500 p-3 m-2 rounded-full"></button>
-          <button className="bg-white text-blue-500 p-3 m-2 rounded-full"></button>
-          <button className="bg-white text-blue-500 p-3 m-2 rounded-full"></button>
-          <button className="bg-white text-blue-500 p-3 m-2 rounded-full"></button>
         </div>
       </div>
 
