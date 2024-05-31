@@ -19,13 +19,13 @@ const ProductCard = ({ product }) => {
       </Link>
       <div>
         <h2>{product.title}</h2>
-        <p>{product.price} USD</p>
+        <p>${product.price}</p>
         <div className="flex items-center">
           <input
             type="number"
             value={quantity}
             onChange={(e) => setQuantity(parseInt(e.target.value))}
-            className="border w-12 text-center mr-2"
+            className="border w-12 text-center mr-2 bg-white"
             min="1"
           />
           <button onClick={handleAddToCart} className="bg-blue-500 text-white px-2 py-1">
