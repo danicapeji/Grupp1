@@ -1,28 +1,27 @@
-import React, { useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-
-const ProductPage = ({ addToCart }) => {
+import { useQuery } from "@tanstack/react-query";
+import { fetchProductById } from "../api";
+const ProductPage = ({ onAddToCart }) => {
   const { id } = useParams();
-  const [product, setProduct] = useState({});
-
-  const dummyProduct = {
-    id: id,
-    name: "Product",
-    price: 250,
-  };
-
+  const {
+    data: product,
+    error,
+    isLoading,
+  } = useQuery({
+    queryKey: ["product", id],
+    queryFn: () => fetchProductById(id),
+  });
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error.message}</div>;
   return (
-    <div className="bg-gray-400 p-4 fixed h-full w-full top-0 z-10">
-      <h1 className="text-white text-2xl">{dummyProduct.name}</h1>
-      <p className="flex-space-x-4 text-white">Pris: {dummyProduct.price} kr</p>
-      <button
-        className="hover:text-gray-500"
-        onClick={() => addToCart(dummyProduct)}
-      >
-        Lägg till i varukorg
-      </button>
+    <div className="product-details">
+      <img src={product.image} alt={product.title} />
+      <h1>{product.title}</h1>
+      <p>{product.description}</p>
+      <p>{product.price} USD</p>
+      <button onClick={() => onAddToCart(product)}>Add to Cart</button>
     </div>
   );
 };
-
 export default ProductPage;
