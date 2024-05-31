@@ -5,6 +5,7 @@ import CartPage from './pages/ShoppingCartPage';
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
 import ProductPage from './pages/ProductPage';
+import OrderConfirmationPage from './pages/OrderConfirmationPage';
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
       <Route path="/shop" element={<ShopPage />} />
       <Route path="/product/:id" element={<ProductPage />} />
       <Route path="/cart" element={<CartPage />} />
+      <Route path="/order-confirmation" element={<OrderConfirmationPage />} />
     </Routes>
     <Footer/>
     </BrowserRouter>
