@@ -36,18 +36,14 @@ const ShopPage = () => {
         setCurrentPage(pageNumber);
     };
 
-    const filteredProducts = selectedCategory === 'all'
-        ? products
-        : products.filter(product => product.category === selectedCategory);
-
-    if (!filteredProducts) return <div>Loading...</div>; // Add this check
+    // Add a conditional check to ensure products is defined before filtering
+    const filteredProducts = products ? 
+        selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory)
+        : [];
 
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
-
-    // Check if filteredProducts is undefined before calling slice
-    const currentProducts = filteredProducts ? filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct) : [];
-
+    const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
     
     if (productsLoading || categoriesLoading) return <div>Loading...</div>;
