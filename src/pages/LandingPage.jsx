@@ -28,21 +28,19 @@ const LandingPage = () => {
         style={{ height: "600px" }}
       >
         <p className="text-gray-700 text-center">
-          Upptäck vår senaste kollektion och upplev en värld av stil och
-          komfort! Våra kläder är designade med både kvalitet och mode i åtanke,
-          så att du alltid kan känna dig självsäker och trendig. Från eleganta
-          vardagsplagg till sofistikerade festoutfits – vi har något för varje
-          tillfälle. Välkommen in och förnya din garderob med tidlösa favoriter
-          och säsongens hetaste nyheter. Shoppa nu och hitta din nya look hos
-          oss!
+          Discover our latest collection and experience a world of style and
+          comfort! Our clothes are designed with both quality and fashion in
+          mind, so you can always feel confident and trendy. From elegant
+          everyday wear to sophisticated party outfits – we have something for
+          every occasion. Welcome and refresh your wardrobe with timeless
+          favorites and the season's hottest news. Shop now and find your new
+          look with us!
         </p>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px- rounded">
-  Shoppa nu
-</button>
+          Shoppa nu
+        </button>
       </div>
-      <h2 className="text-2xl font-semibold text-center">
-        Börja här!
-      </h2>
+      <h2 className="text-2xl font-semibold text-center">Börja här!</h2>
       <p className="text-lg text-gray-700 mb-4 text-center">
         Explore our latest collection and experience a world of style and
         comfort!
