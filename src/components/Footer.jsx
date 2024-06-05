@@ -3,7 +3,7 @@ const Footer = () => {
     <footer className="w-full bg-slate-500 text-white py-2">
       <div className="container flex flex-col md:flex-row justify-between items-center">
         <div className="h-full w-full mb-4 md:mb-0 p-1 pl-16">
-          <h2 className="text-xl font-semibold">Kontakt</h2>
+          <h2 className="text-xl font-semibold">Contact</h2>
           <p>
             Email:{" "}
             <a
