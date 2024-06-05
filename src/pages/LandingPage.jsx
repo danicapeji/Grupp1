@@ -21,8 +21,6 @@ const LandingPage = () => {
 
   return (
     <div className="header w-full p-4 mt-20">
-<<<<<<< HEAD
-
   <div
     className="relative p-4 m-4 border border-gray-300 rounded-lg shadow-lg flex flex-col justify-end"
     style={{
@@ -64,8 +62,6 @@ const LandingPage = () => {
   </div>
 </div>
 
-  
-=======
       <h2 className="text-2xl font-semibold text-center">Välkommen!</h2>
       <p className="text-lg text-gray-700 mb-4 text-center">
         Upptäck vår senaste kollektion och upplev en värld av stil och komfort!
@@ -113,7 +109,7 @@ const LandingPage = () => {
         ))}
       </div>
     </div>
->>>>>>> dev
+
   );
 };
 
