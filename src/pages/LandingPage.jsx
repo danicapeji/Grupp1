@@ -37,10 +37,10 @@ const LandingPage = () => {
           look with us!
         </p>
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px- rounded">
-          Shoppa nu
+          Explore now
         </button>
       </div>
-      <h2 className="text-2xl font-semibold text-center">Börja här!</h2>
+      <h2 className="text-2xl font-semibold text-center">Start here!</h2>
       <p className="text-lg text-gray-700 mb-4 text-center">
         Explore our latest collection and experience a world of style and
         comfort!
