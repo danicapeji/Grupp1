@@ -21,7 +21,7 @@ const ShopPage = () => {
 
     const [selectedCategory, setSelectedCategory] = useState(initialCategory);
     const [currentPage, setCurrentPage] = useState(1);
-    const productsPerPage = 10;
+    const productsPerPage = 8;
 
     useEffect(() => {
         setSelectedCategory(initialCategory);
@@ -36,15 +36,16 @@ const ShopPage = () => {
         setCurrentPage(pageNumber);
     };
 
-    const filteredProducts = selectedCategory === 'all'
-        ? products
-        : products.filter(product => product.category === selectedCategory);
+    // Add a conditional check to ensure products is defined before filtering
+    const filteredProducts = products ? 
+        selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory)
+        : [];
 
     const indexOfLastProduct = currentPage * productsPerPage;
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-
+    
     if (productsLoading || categoriesLoading) return <div>Loading...</div>;
     if (productsError) return <div>Error: {productsError.message}</div>;
     if (categoriesError) return <div>Error: {categoriesError.message}</div>;
@@ -62,7 +63,7 @@ const ShopPage = () => {
                     onClick={() => handleCategoryClick('all')}
                     className={`p-2 border ${selectedCategory === 'all' ? 'bg-blue-500 text-white' : 'bg-white'}`}
                 >
-                    All
+                    All products
                 </button>
                 {categories.map(category => (
                     <button
