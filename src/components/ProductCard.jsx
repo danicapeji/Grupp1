@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
@@ -11,10 +11,14 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div className='p-4'>
+    <div className="p-4">
       <Link to={`/product/${product.id}`}>
-        <div className='w-full h-60 md:h-96 lg:h-[32rem] bg-white flex items-center justify-center'>
-          <img className='object-contain max-w-full max-h-full p-4' src={product.image} alt={product.title} />
+        <div className="w-full h-60 md:h-96 lg:h-[32rem] bg-white flex items-center justify-center">
+          <img
+            className="object-contain max-w-full max-h-full p-4"
+            src={product.image}
+            alt={product.title}
+          />
         </div>
       </Link>
       <div>
@@ -28,7 +32,10 @@ const ProductCard = ({ product }) => {
             className="border w-12 text-center mr-2 bg-white"
             min="1"
           />
-          <button onClick={handleAddToCart} className="bg-blue-500 text-white px-2 py-1">
+          <button
+            onClick={handleAddToCart}
+            className="bg-blue-500 text-white px-2 py-1"
+          >
             Add to Cart
           </button>
         </div>
