@@ -13,7 +13,7 @@ const OrderConfirmationPage = () => {
 
   return (
     <div className="container mx-auto flex justify-center text-center items-center">
-      <div className="container w-15 bg-slate-500 mt-20 p-4">
+      <div className="container w-15 bg-slate-400 mt-20 p-4">
         <h1 className="text-2xl font-semibold mb-4">
           Your order has been confirmed
         </h1>
