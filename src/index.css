@@ -13,3 +13,9 @@ html, body, #root {
 #root {
   @apply flex flex-col min-h-screen;
 }
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* May need to adjust margins to fit your design */
+}

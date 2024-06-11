@@ -76,7 +76,7 @@ const ShopPage = () => {
                 ))}
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-1 md:gap-4 mt-4 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 md:gap-5 mt-4 mb-20">
                 {currentProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}
