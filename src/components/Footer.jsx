@@ -1,7 +1,7 @@
 import FooterIcons from "./FooterIcons";
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-500 text-white py-3">
+    <footer className="w-full mt-5 bg-slate-500 text-white py-3">
       <div className="flex flex-col md:flex-row items-center">
         <div className="h-full w-full mb-1 md:mb-0 p-1 pl-20">
           <h2 className="text-xl font-semibold">Contact</h2>
