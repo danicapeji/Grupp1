@@ -21,19 +21,19 @@ const ProductCard = ({ product }) => {
         <h2>{product.title}</h2>
         <p>${product.price}</p>
       </div>
-      <div className="flex items-center flex-col md:flex-row">
+      <div className="flex items-center flex-col md:flex-row justify-between">
         <div>
-          <button onClick={() => setQuantity(quantity - 1)} className="border w-6 text-center bg-white">
+          <button onClick={() => setQuantity(quantity - 1)} className="border w-6 text-center bg-white p-1">
             -
           </button>
           <input
             type="number"
             value={quantity}
             onChange={(e) => setQuantity(parseInt(e.target.value))}
-            className="border w-10 text-center bg-white"
+            className="border w-10 text-center bg-white p-1"
             min="1"
           />
-          <button onClick={() => setQuantity(quantity + 1)} className="border w-6 text-center bg-white">
+          <button onClick={() => setQuantity(quantity + 1)} className="border w-6 text-center bg-white p-1">
             +
           </button>
         </div>
