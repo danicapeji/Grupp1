@@ -1,11 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = () => {
   const { cart } = useCart();
 
-  const cartItemCount = cart.reduce((total, product) => total + product.quantity, 0);
+  const cartItemCount = cart.reduce(
+    (total, product) => total + product.quantity,
+    0
+  );
 
   return (
     <nav className="bg-gray-800 p-4 fixed w-full top-0 z-10">
@@ -25,8 +30,9 @@ const Navigation = () => {
             </Link>
           </li>
           <li>
-            <Link to="/cart" className="hover:text-gray-400">
-              Shopping Cart ({cartItemCount})
+            <Link to="/cart" className="hover:text-gray-400 flex items-center">
+              <FontAwesomeIcon icon={faCartShopping} className="mr-2" />(
+              {cartItemCount})
             </Link>
           </li>
         </ul>
