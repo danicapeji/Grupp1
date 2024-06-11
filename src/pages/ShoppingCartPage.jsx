@@ -46,6 +46,9 @@ const CartPage = () => {
                   <p>Price: ${product.price}</p>
                   {editingProductId === product.id ? (
                     <div className="flex items-center">
+                      <button onClick={() => setNewQuantity(newQuantity - 1)} className="border p-1 w-6 text-center bg-white">
+                        -
+                      </button>
                       <input
                         type="number"
                         value={newQuantity}
@@ -53,6 +56,9 @@ const CartPage = () => {
                         className="border border-gray-300 p-1 w-16 text-center"
                         min="1"
                       />
+                      <button onClick={() => setNewQuantity(newQuantity + 1)} className="border p-1 w-6 text-center bg-white">
+                        +
+                      </button>
                       <button
                         className="bg-green-500 text-white px-2 ml-2"
                         onClick={() => handleUpdateQuantity(product.id)}

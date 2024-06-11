@@ -26,7 +26,7 @@ const ProductPage = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="container mx-auto p-6 mt-8">
+    <div className="container mx-auto p-6 mt-16">
       <div className="flex text-black mb-4">
         <Link to="/">Home</Link>
         <span>&nbsp;/&nbsp;</span>
@@ -50,13 +50,19 @@ const ProductPage = () => {
           <p className="mb-4">{product.description}</p>
 
           <div className="flex items-center mb-4">
+            <button onClick={() => setQuantity(quantity - 1)} className="border p-2 w-8 text-center bg-white">
+              -
+            </button>
             <input
               type="number"
               value={quantity}
               onChange={(e) => setQuantity(parseInt(e.target.value))}
-              className="border w-12 text-center mr-4 p-2"
+              className="border w-12 text-center  p-2"
               min="1"
             />
+            <button onClick={() => setQuantity(quantity + 1)} className="border p-2 w-8 mr-4 text-center bg-white">
+              +
+            </button>
             <button
               onClick={handleAddToCart}
               className="bg-blue-500 text-white px-4 py-2"

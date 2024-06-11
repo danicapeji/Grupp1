@@ -62,7 +62,7 @@ const LandingPage = () => {
       <p className="text-lg text-gray-700 mb-4 text-center">
         Explore our latest collection and experience a world of style and comfort!
       </p>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-1 md:gap-4 mt-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mt-8">
         {products.slice(0, 4).map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}
