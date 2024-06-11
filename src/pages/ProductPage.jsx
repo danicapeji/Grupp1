@@ -26,7 +26,7 @@ const ProductPage = () => {
   if (error) return <div>Error: {error.message}</div>;
 
   return (
-    <div className="container mx-auto p-6 mt-8">
+    <div className="container mx-auto p-6 mt-16">
       <div className="flex text-black mb-4">
         <Link to="/">Home</Link>
         <span>&nbsp;/&nbsp;</span>

@@ -21,20 +21,22 @@ const ProductCard = ({ product }) => {
         <h2>{product.title}</h2>
         <p>${product.price}</p>
       </div>
-      <div className="flex items-center">
-        <button onClick={() => setQuantity(quantity - 1)} className="border w-6 text-center bg-white">
-          -
-        </button>
-        <input
-          type="number"
-          value={quantity}
-          onChange={(e) => setQuantity(parseInt(e.target.value))}
-          className="border w-12 text-center bg-white"
-          min="1"
-        />
-        <button onClick={() => setQuantity(quantity + 1)} className="border w-6 text-center bg-white">
-          +
-        </button>
+      <div className="flex items-center flex-col md:flex-row">
+        <div>
+          <button onClick={() => setQuantity(quantity - 1)} className="border w-6 text-center bg-white">
+            -
+          </button>
+          <input
+            type="number"
+            value={quantity}
+            onChange={(e) => setQuantity(parseInt(e.target.value))}
+            className="border w-10 text-center bg-white"
+            min="1"
+          />
+          <button onClick={() => setQuantity(quantity + 1)} className="border w-6 text-center bg-white">
+            +
+          </button>
+        </div>
         <button onClick={handleAddToCart} className="bg-blue-500 text-white px-2 py-1">
           Add to Cart
         </button>
