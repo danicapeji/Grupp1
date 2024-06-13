@@ -1,6 +1,10 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { fetchProducts, fetchCategories } from "../api";
+import {
+  fetchProducts,
+  fetchCategories,
+  fetchCategoriesWithImages,
+} from "../api";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 
@@ -20,7 +24,7 @@ const LandingPage = () => {
     isLoading: categoriesLoading,
   } = useQuery({
     queryKey: ["categories"],
-    queryFn: fetchCategories,
+    queryFn: fetchCategoriesWithImages,
   });
 
   if (productsLoading || categoriesLoading) return <div>Loading...</div>;
@@ -56,11 +60,18 @@ const LandingPage = () => {
         </Link>
       </div>
       <h2 className="text-2xl font-semibold text-center mt-16">Categories</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:grid-cols-3 justify-center max-w-5xl mx-auto">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:grid-cols-3 justify-center max-w-5xl mx-auto place-items-center mt-12">
         {categories.map((category) => (
-          <Link key={category} to={`/shop?category=${category}`}>
+          <Link key={category.name} to={`/shop?category=${category.name}`}>
             <button className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">
-              <div className="h-40 w-40 bg-gray-400"></div> <p>{category}</p>
+              <div className="h-40 w-40 bg-gray-400">
+                <img
+                  src={category.imageUrl}
+                  alt={category.name}
+                  className="h-full w-full object-cover rounded"
+                />
+              </div>
+              <p>{category.name}</p>
             </button>
           </Link>
         ))}
