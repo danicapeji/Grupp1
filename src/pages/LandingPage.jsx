@@ -56,12 +56,11 @@ const LandingPage = () => {
         </Link>
       </div>
       <h2 className="text-2xl font-semibold text-center mt-16">Categories</h2>
-      <div className="md:grid grid-cols-4 lg:grid-cols-2 gap-1">
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:grid-cols-3 justify-center max-w-5xl mx-auto">
         {categories.map((category) => (
           <Link key={category} to={`/shop?category=${category}`}>
             <button className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">
-              <div className="h-40 w-40 bg-gray-400"></div>{" "}
-              <p>{category}</p>
+              <div className="h-40 w-40 bg-gray-400"></div> <p>{category}</p>
             </button>
           </Link>
         ))}
