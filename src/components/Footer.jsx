@@ -1,3 +1,4 @@
+import FooterIcons from "./FooterIcons";
 const Footer = () => {
   return (
     <footer className="w-full bg-slate-500 text-white py-6">
@@ -70,10 +71,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="h-full w-full mb-1 md:mb-0 p-1 pl-20"></div>
       </div>
-      <hr className="w-1/2 h-px bg-gray-200 border-0 dark:bg-gray-700 mx-auto" />
 
       <div className="container mx-auto text-center mt-4">
+        <hr className="w-1/2 h-px bg-gray-200 border-0 dark:bg-gray-700 mx-auto" />
         <p className="text-white">&copy; 2021 All Rights Reserved</p>
       </div>
     </footer>
