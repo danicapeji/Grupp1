@@ -1,30 +1,18 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import {
-  fetchProducts,
-  fetchCategories,
-  fetchCategoriesWithImages,
-} from "../api";
+import { fetchProducts, fetchCategories } from "../api";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 
 const LandingPage = () => {
-  const {
-    data: products,
-    error: productsError,
-    isLoading: productsLoading,
-  } = useQuery({
+  const { data: products, error: productsError, isLoading: productsLoading } = useQuery({
     queryKey: ["products"],
     queryFn: fetchProducts,
   });
 
-  const {
-    data: categories,
-    error: categoriesError,
-    isLoading: categoriesLoading,
-  } = useQuery({
+  const { data: categories, error: categoriesError, isLoading: categoriesLoading } = useQuery({
     queryKey: ["categories"],
-    queryFn: fetchCategoriesWithImages,
+    queryFn: fetchCategories,
   });
 
   if (productsLoading || categoriesLoading) return <div>Loading...</div>;
@@ -56,23 +44,17 @@ const LandingPage = () => {
       </section>
 
       <div className="container mx-auto mt-10">
-         <h2 className="text-2xl font-semibold text-center mt-16">Categories</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:grid-cols-3 justify-center max-w-5xl mx-auto place-items-center mt-12">
-        {categories.map((category) => (
-          <Link key={category.name} to={`/shop?category=${category.name}`}>
-            <button className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">
-              <div className="h-40 w-40 bg-gray-400">
-                <img
-                  src={category.imageUrl}
-                  alt={category.name}
-                  className="h-full w-full object-cover rounded"
-                />
-              </div>
-              <p>{category.name}</p>
-            </button>
-          </Link>
-        ))}
-      </div>
+        <h2 className="text-2xl font-semibold text-center">Categories</h2>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5 mt-4 mb-4">
+          {categories.map((category) => (
+            <Link key={category} to={`/shop?category=${category}`} className="mx-2 mb-4">
+              <button className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded flex flex-col items-center">
+                <div className="h-40 w-40 bg-gray-400 mb-2"></div>
+                <p>{category}</p>
+              </button>
+            </Link>
+          ))}
+        </div>
 
         <h2 className="text-2xl font-semibold text-center">Start here!</h2>
         <p className="text-lg text-gray-700 mb-4 text-center">
