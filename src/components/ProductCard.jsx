@@ -34,7 +34,7 @@ const ProductCard = ({ product }) => {
               type="number"
               value={quantity}
               onChange={(e) => setQuantity(parseInt(e.target.value))}
-              className="border w-12 text-center bg-white py-1 text-sm mx-1"
+              className="border w-12 text-center bg-white py-1 text-sm"
               min="1"
             />
             <button
@@ -46,7 +46,7 @@ const ProductCard = ({ product }) => {
           </div>
           <button
             onClick={handleAddToCart}
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full md:w-auto"
+            className="bg-blue-500 text-white px-3 py-1 rounded hover:bg-blue-600 w-full md:w-auto"
           >
             Add to Cart
           </button>

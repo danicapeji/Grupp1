@@ -41,13 +41,13 @@ const OrderConfirmationPage = () => {
           <p className="font-semibold">Total Price: ${totalPrice}</p>
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-4">
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md mb-2 md:mb-0 md:mr-2">
-            <Link to="/" className="hover:text-gray-400">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-2 md:mb-0 md:mr-2">
+            <Link to="/">
               Go Home
             </Link>
           </button>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded-md">
-            <Link to="/shop" className="hover:text-gray-400">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            <Link to="/shop">
               Continue shopping
             </Link>
           </button>
