@@ -1,10 +1,6 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import {
-  fetchProducts,
-  fetchCategories,
-  fetchCategoriesWithImages,
-} from "../api";
+import { fetchProducts, fetchCategoriesWithImages } from "../api";
 import ProductCard from "../components/ProductCard";
 import { Link } from "react-router-dom";
 
@@ -54,24 +50,28 @@ const LandingPage = () => {
           sophisticated party outfits – we have something for every occasion.
         </p>
         <Link to="/shop" className="mt-4 flex justify-center">
-          <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
-            Shop now
-          </button>
-        </Link>
+    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded">
+      Shop now
+    </button>
+  </Link>
       </div>
       <h2 className="text-2xl font-semibold text-center mt-16">Categories</h2>
-      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:grid-cols-3 justify-center max-w-5xl mx-auto place-items-center mt-12">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 gap-6 justify-center max-w-5xl mx-auto place-items-center mt-12">
         {categories.map((category) => (
-          <Link key={category.name} to={`/shop?category=${category.name}`}>
-            <button className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">
-              <div className="h-40 w-40 bg-gray-400">
+          <Link
+            key={category.name}
+            to={`/shop?category=${encodeURIComponent(category.name)}`}
+            className="w-full flex flex-col items-center"
+          >
+            <button className="bg-white hover:bg-gray-100 text-black font-bold py-2 px-4 rounded w-full flex flex-col items-center border border-gray-300">
+              <div className="w-full h-40 flex items-center justify-center bg-white  border-gray-300">
                 <img
                   src={category.imageUrl}
                   alt={category.name}
-                  className="h-full w-full object-cover rounded"
+                  className="object-contain h-full w-full rounded"
                 />
               </div>
-              <p>{category.name}</p>
+              <p className="mt-2">{category.name}</p>
             </button>
           </Link>
         ))}
