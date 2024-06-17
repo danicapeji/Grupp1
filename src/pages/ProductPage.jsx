@@ -28,9 +28,9 @@ const ProductPage = () => {
   return (
     <div className="container mx-auto p-6 mt-16">
       <div className="flex text-black mb-4">
-        <Link to="/">Home</Link>
+        <Link to="/" className="hover:text-gray-500">Home</Link>
         <span>&nbsp;/&nbsp;</span>
-        <Link to="/shop">Shop</Link>
+        <Link to="/shop" className="hover:text-gray-500">Shop</Link>
         <span>&nbsp;/&nbsp;</span>
         <span>{product.title}</span>
       </div>
@@ -49,23 +49,29 @@ const ProductPage = () => {
           <p className="text-xl text-gray-700 mb-4">${product.price}</p>
           <p className="mb-4">{product.description}</p>
 
-          <div className="flex items-center mb-4">
-            <button onClick={() => setQuantity(quantity - 1)} className="border p-2 w-8 text-center bg-white">
+          <div className="flex flex-col md:flex-row items-center mb-4">
+            <div className="mr-2 mb-2">
+            <button
+            onClick={() => setQuantity(quantity - 1)}
+            className="border rounded-l px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300">
               -
             </button>
             <input
               type="number"
               value={quantity}
               onChange={(e) => setQuantity(parseInt(e.target.value))}
-              className="border w-12 text-center  p-2"
+              className="border w-12 text-center bg-white py-2 text-sm"
               min="1"
             />
-            <button onClick={() => setQuantity(quantity + 1)} className="border p-2 w-8 mr-4 text-center bg-white">
+            <button
+            onClick={() => setQuantity(quantity + 1)}
+            className="border rounded-r px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300">
               +
             </button>
+            </div>
             <button
               onClick={handleAddToCart}
-              className="bg-blue-500 text-white px-4 py-2"
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 w-full md:w-auto mb-2"
             >
               Add to Cart
             </button>

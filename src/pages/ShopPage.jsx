@@ -52,9 +52,9 @@ const ShopPage = () => {
     return (
         <section className='flex flex-col p-4 mt-16'>
             <div className='flex text-black'>
-                <Link to="/">Home</Link>
+                <Link to="/" className="hover:text-gray-500">Home</Link>
                 <p>&nbsp;/&nbsp;</p>
-                <Link to="/shop">Shop</Link>
+                <span>Shop</span>
             </div>
 
             <div className="mt-4 flex space-x-2 overflow-x-auto">

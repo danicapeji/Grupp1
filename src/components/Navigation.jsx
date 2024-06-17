@@ -18,7 +18,7 @@ const Navigation = () => {
       <div className="container mx-auto flex md:justify-between items-center">
         {/* Logga synlig i desktop, dold i mobil */}
         <div className="hidden md:block text-white text-2xl">
-          <Link to="/">CSTORE</Link>
+          <Link to="/" className="hover:text-gray-400">CSTORE</Link>
         </div>
         <div className="hidden md:flex space-x-4 text-white">
           <Link to="/" className="hover:text-gray-400">
