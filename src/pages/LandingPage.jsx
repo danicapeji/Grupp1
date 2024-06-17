@@ -51,7 +51,6 @@ const LandingPage = () => {
   return (
     <div className="mt-[4rem] w-full">
       {" "}
-      {/* Adjust the margin-top based on your navbar height */}
       <section className="overflow-hidden bg-center bg-[url('https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=1964&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-top bg-no-repeat">
         <div className="bg-black/25 p-4 py-8 md:p-8 lg:p-12 lg:px-16 lg:py-24">
           <div className="flex flex-col justify-center">
