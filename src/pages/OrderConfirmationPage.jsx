@@ -12,8 +12,8 @@ const OrderConfirmationPage = () => {
   );
 
   return (
-    <div className="container mx-auto flex justify-center h-fit mt-10">
-      <div className="w-4/5 md:w-3/4 bg-white mt-20 p-4 md:p-8 rounded-lg shadow-lg">
+    <div className="container mx-auto flex justify-center h-fit mt-20">
+      <div className="w-4/5 md:w-3/4 bg-white my-10 p-4 md:p-8 rounded-lg shadow-lg">
         <h1 className="text-2xl font-semibold mb-4 text-center">
           Thank you for your order!
         </h1>
