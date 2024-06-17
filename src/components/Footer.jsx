@@ -7,28 +7,22 @@ const Footer = () => {
           <h2 className="text-xl font-semibold">Contact</h2>
           <p className="font-medium">
             Email:{" "}
-            <a
-              href="mailto:Info@Hemsida.se"
-              className="font-normal text-white"
-            >
+            <a href="mailto:Info@Hemsida.se" className="font-normal text-white">
               Info@Hemsida.se
             </a>
           </p>
           <p className="font-medium">
             Phone:{" "}
-            <a
-              href="tel:+46322650780"
-              className="text-white font-normal"
-            >
+            <a href="tel:+46322650780" className="text-white font-normal">
               +46 322 650 780
             </a>
           </p>
           <div className="flex flex-row">
-          <p className="font-medium mr-2">Address:</p>
-          <div>
-          <p>Mattssons väg 4</p>
-          <p>44192 Tokholm</p>
-          </div>
+            <p className="font-medium mr-2">Address:</p>
+            <div>
+              <p>Mattssons väg 4</p>
+              <p>44192 Tokholm</p>
+            </div>
           </div>
         </div>
         <div className="flex justify-center md:text-center">

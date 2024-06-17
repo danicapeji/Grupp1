@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { useCart } from "../context/CartContext";
 
 const ProductCard = ({ product }) => {
   const { addToCart } = useCart();
@@ -14,7 +14,11 @@ const ProductCard = ({ product }) => {
     <div className="p-4 bg-white rounded-lg shadow-lg h-full flex flex-col justify-between transition-transform transform">
       <Link className="hover:opacity-80" to={`/product/${product.id}`}>
         <div className="w-full h-60 lg:h-72 bg-white flex items-center justify-center rounded-t-lg overflow-hidden">
-          <img className="object-contain max-w-full max-h-full p-2" src={product.image} alt={product.title} />
+          <img
+            className="object-contain max-w-full max-h-full p-2"
+            src={product.image}
+            alt={product.title}
+          />
         </div>
       </Link>
       <div className="mt-4 flex-grow flex flex-col justify-between">

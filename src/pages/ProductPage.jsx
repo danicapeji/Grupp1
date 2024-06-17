@@ -28,11 +28,21 @@ const ProductPage = () => {
   return (
     <div className="container mx-auto p-6 mt-16">
       <div className="flex text-black mb-4">
-        <Link to="/" className="hover:text-gray-500">Home</Link>
+        <Link to="/" className="hover:text-gray-500">
+          Home
+        </Link>
         <span>&nbsp;/&nbsp;</span>
-        <Link to="/shop" className="hover:text-gray-500">Shop</Link>
+        <Link to="/shop" className="hover:text-gray-500">
+          Shop
+        </Link>
         <span>&nbsp;/&nbsp;</span>
-        <Link key={product.category} to={`/shop?category=${product.category}`} className="hover:text-gray-500">{product.category}</Link>
+        <Link
+          key={product.category}
+          to={`/shop?category=${product.category}`}
+          className="hover:text-gray-500"
+        >
+          {product.category}
+        </Link>
         <span>&nbsp;/&nbsp;</span>
         <span>{product.title}</span>
       </div>
@@ -53,23 +63,25 @@ const ProductPage = () => {
 
           <div className="flex flex-col md:flex-row items-center mb-4">
             <div className="mr-2 mb-2">
-            <button
-            onClick={() => setQuantity(quantity - 1)}
-            className="border rounded-l px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300">
-              -
-            </button>
-            <input
-              type="number"
-              value={quantity}
-              onChange={(e) => setQuantity(parseInt(e.target.value))}
-              className="border w-12 text-center bg-white py-2 text-sm"
-              min="1"
-            />
-            <button
-            onClick={() => setQuantity(quantity + 1)}
-            className="border rounded-r px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300">
-              +
-            </button>
+              <button
+                onClick={() => setQuantity(quantity - 1)}
+                className="border rounded-l px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300"
+              >
+                -
+              </button>
+              <input
+                type="number"
+                value={quantity}
+                onChange={(e) => setQuantity(parseInt(e.target.value))}
+                className="border w-12 text-center bg-white py-2 text-sm"
+                min="1"
+              />
+              <button
+                onClick={() => setQuantity(quantity + 1)}
+                className="border rounded-r px-3 py-2 text-sm bg-gray-200 hover:bg-gray-300"
+              >
+                +
+              </button>
             </div>
             <button
               onClick={handleAddToCart}

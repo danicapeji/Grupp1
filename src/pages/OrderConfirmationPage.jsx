@@ -24,8 +24,12 @@ const OrderConfirmationPage = () => {
               className="flex items-center justify-between border-b border-gray-300 py-2"
             >
               <div className="flex items-center">
-                <div className='w-20 mr-4 bg-white flex items-center justify-center'>
-                  <img className='object-contain max-w-full max-h-full p-1' src={product.image} alt={product.title} />
+                <div className="w-20 mr-4 bg-white flex items-center justify-center">
+                  <img
+                    className="object-contain max-w-full max-h-full p-1"
+                    src={product.image}
+                    alt={product.title}
+                  />
                 </div>
                 <div>
                   <p className="font-semibold">{product.title}</p>
@@ -42,14 +46,10 @@ const OrderConfirmationPage = () => {
         </div>
         <div className="flex flex-col md:flex-row justify-center items-center mt-4">
           <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-2 md:mb-0 md:mr-2">
-            <Link to="/">
-              Go Home
-            </Link>
+            <Link to="/">Go Home</Link>
           </button>
           <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
-            <Link to="/shop">
-              Continue shopping
-            </Link>
+            <Link to="/shop">Continue shopping</Link>
           </button>
         </div>
       </div>
