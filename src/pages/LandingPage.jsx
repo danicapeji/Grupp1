@@ -85,14 +85,17 @@ const LandingPage = () => {
               className="mx-2 mb-4"
             >
               <button className="bg-white shadow-lg text-black font-bold rounded-lg flex flex-col items-center w-full">
-                <div className="overflow-hidden rounded-t-lg h-80 w-full relative">
+                <div className="w-full h-60 lg:h-72 bg-white flex items-center justify-center rounded-t-lg overflow-hidden">
                   <img
                     src={categoryImages[category]}
                     alt={category}
-                    className="p-2 h-fit object-cover hover:opacity-80"
+                    className="object-contain max-w-full max-h-full p-2 hover:opacity-80"
                   />
                 </div>
-                <p className="my-2 font-medium">{category}</p>
+                <p className="my-2 font-medium">
+                  {category.charAt(0).toUpperCase() +
+                    category.slice(1).toLowerCase()}
+                </p>
               </button>
             </Link>
           ))}

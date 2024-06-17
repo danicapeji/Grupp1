@@ -93,7 +93,7 @@ const ShopPage = () => {
                 : "bg-white text-black hover:bg-blue-100 transition-colors duration-300"
             }`}
           >
-            {category}
+            {category.charAt(0).toUpperCase() + category.slice(1).toLowerCase()}
           </button>
         ))}
       </div>

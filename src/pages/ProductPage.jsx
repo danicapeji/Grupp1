@@ -41,7 +41,8 @@ const ProductPage = () => {
           to={`/shop?category=${product.category}`}
           className="hover:text-gray-500"
         >
-          {product.category}
+          {product.category.charAt(0).toUpperCase() +
+            product.category.slice(1).toLowerCase()}
         </Link>
         <span>&nbsp;/&nbsp;</span>
         <span>{product.title}</span>
