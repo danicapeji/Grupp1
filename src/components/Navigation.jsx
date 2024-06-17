@@ -45,7 +45,9 @@ const Navigation = () => {
             <HamburgerMenu />
           </div>
           <div className="text-white text-2xl flex-grow text-center">
-            <Link to="/">CSTORE</Link>
+            <Link to="/" className="hover:text-gray-400">
+              CSTORE
+            </Link>
           </div>
           <div className="flex items-center">
             <Link

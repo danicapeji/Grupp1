@@ -58,7 +58,7 @@ const LandingPage = () => {
             <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl w-2/3">
               Experience a world of style and comfort
             </h2>
-            <p className="text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed w-4/5">
+            <p className="text-white/90 md:mt-6 md:block md:text-lg md:leading-relaxed w-2/3 2xl:w-1/3">
               Our clothes are designed with both quality and fashion in mind, so
               you can always feel confident and trendy. From elegant everyday
               wear to sophisticated party outfits – we have something for every
