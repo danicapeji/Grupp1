@@ -33,7 +33,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="container flex mx-auto justify-center mt-10 h-fit">
+    <div className="container flex mx-auto justify-center my-10 h-fit">
       {cart.length === 0 ? (
         <div>
           <p>Your cart is empty</p>
@@ -79,7 +79,7 @@ const CartPage = () => {
                         min="1"
                       />
                       <button
-                        onClick={() => seNewtQuantity(newQuantity + 1)}
+                        onClick={() => setNewQuantity(newQuantity + 1)}
                         className="border rounded-r px-2 py-1 text-sm bg-gray-200 hover:bg-gray-300"
                       >
                         +
