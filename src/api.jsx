@@ -1,30 +1,30 @@
 const API_BASE_URL = 'https://fakestoreapi.com';
 
+// Helper function to fetch data
+const fetchData = async (url) => {
+  const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error(`Network response was not ok: ${response.statusText}`);
+  }
+  return response.json();
+};
+
+// Fetch products
 export const fetchProducts = async () => {
-  const response = await fetch(`${API_BASE_URL}/products`);
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json();
+  return fetchData(`${API_BASE_URL}/products`);
 };
 
+// Fetch categories
 export const fetchCategories = async () => {
-  const response = await fetch(`${API_BASE_URL}/products/categories`);
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json();
+  return fetchData(`${API_BASE_URL}/products/categories`);
 };
 
+// Fetch a product by ID
 export const fetchProductById = async (id) => {
-  const response = await fetch(`${API_BASE_URL}/products/${id}`);
-  if (!response.ok) {
-    throw new Error('Network response was not ok');
-  }
-  return response.json();
+  return fetchData(`${API_BASE_URL}/products/${id}`);
 };
 
-
+// Fetch categories with images
 export const fetchCategoriesWithImages = async () => {
   const categories = await fetchCategories();
   const products = await fetchProducts();
@@ -33,7 +33,7 @@ export const fetchCategoriesWithImages = async () => {
     const product = products.find(p => p.category === category);
     return {
       name: category,
-      imageUrl: product ? product.image : 'default_image_url.jpg' 
+      imageUrl: product ? product.image : 'https://via.placeholder.com/150' // Default image URL
     };
   });
 };

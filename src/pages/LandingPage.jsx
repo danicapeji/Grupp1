@@ -1,12 +1,8 @@
-import React from "react";
-import { useQuery } from "@tanstack/react-query";
-import {
-  fetchProducts,
-  fetchCategories,
-  fetchCategoriesWithImages,
-} from "../api";
-import ProductCard from "../components/ProductCard";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { fetchProducts, fetchCategoriesWithImages } from '../api';
+import ProductCard from '../components/ProductCard';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   const {
@@ -14,7 +10,7 @@ const LandingPage = () => {
     error: productsError,
     isLoading: productsLoading,
   } = useQuery({
-    queryKey: ["products"],
+    queryKey: ['products'],
     queryFn: fetchProducts,
   });
 
@@ -23,7 +19,7 @@ const LandingPage = () => {
     error: categoriesError,
     isLoading: categoriesLoading,
   } = useQuery({
-    queryKey: ["categories"],
+    queryKey: ['categories'],
     queryFn: fetchCategoriesWithImages,
   });
 
@@ -32,7 +28,7 @@ const LandingPage = () => {
   if (categoriesError) return <div>Error: {categoriesError.message}</div>;
 
   return (
-    <div className="mt-[4rem] w-full"> {/* Adjust the margin-top based on your navbar height */}
+    <div className="mt-[4rem] w-full">
       <section className="overflow-hidden bg-[url('https://images.unsplash.com/photo-1574634534894-89d7576c8259?q=80&w=3164&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')] bg-cover bg-top bg-no-repeat">
         <div className="bg-black/25 p-8 md:p-12 lg:px-16 lg:py-24">
           <div>
@@ -56,23 +52,23 @@ const LandingPage = () => {
       </section>
 
       <div className="container mx-auto mt-10">
-         <h2 className="text-2xl font-semibold text-center mt-16">Categories</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:grid-cols-3 justify-center max-w-5xl mx-auto place-items-center mt-12">
-        {categories.map((category) => (
-          <Link key={category.name} to={`/shop?category=${category.name}`}>
-            <button className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">
-              <div className="h-40 w-40 bg-gray-400">
-                <img
-                  src={category.imageUrl}
-                  alt={category.name}
-                  className="h-full w-full object-cover rounded"
-                />
-              </div>
-              <p>{category.name}</p>
-            </button>
-          </Link>
-        ))}
-      </div>
+        <h2 className="text-2xl font-semibold text-center mt-16">Categories</h2>
+        <div className="grid grid-cols-2 sm:grid-cols-2 gap-4 lg:grid-cols-4 justify-center max-w-5xl mx-auto place-items-center mt-12">
+          {categories.map((category) => (
+            <Link key={category.name} to={`/shop?category=${category.name}`}>
+              <button className="bg-gray-200 hover:bg-gray-300 text-black font-bold py-2 px-4 rounded">
+                <div className="h-40 w-40 bg-gray-400">
+                  <img
+                    src={category.imageUrl}
+                    alt={category.name}
+                    className="h-full w-full object-cover rounded"
+                  />
+                </div>
+                <p>{category.name}</p>
+              </button>
+            </Link>
+          ))}
+        </div>
 
         <h2 className="text-2xl font-semibold text-center">Start here!</h2>
         <p className="text-lg text-gray-700 mb-4 text-center">

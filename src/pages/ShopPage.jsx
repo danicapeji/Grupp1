@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useQuery } from '@tanstack/react-query';
 import { fetchProducts, fetchCategories } from '../api';
 import ProductCard from '../components/ProductCard';
 
 const ShopPage = () => {
     const location = useLocation();
+    const navigate = useNavigate();
     const queryParams = new URLSearchParams(location.search);
     const initialCategory = queryParams.get('category') || 'all';
 
@@ -25,11 +26,19 @@ const ShopPage = () => {
 
     useEffect(() => {
         setSelectedCategory(initialCategory);
+        setCurrentPage(1); // Reset to first page when category changes
     }, [initialCategory]);
+
+    useEffect(() => {
+        const category = queryParams.get('category') || 'all';
+        setSelectedCategory(category);
+        setCurrentPage(1);
+    }, [location.search]);
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
         setCurrentPage(1); // Reset to first page when category changes
+        navigate(`/shop?category=${category}`);
     };
 
     const handlePageChange = (pageNumber) => {
@@ -44,7 +53,7 @@ const ShopPage = () => {
     const indexOfFirstProduct = indexOfLastProduct - productsPerPage;
     const currentProducts = filteredProducts.slice(indexOfFirstProduct, indexOfLastProduct);
     const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
-    
+
     if (productsLoading || categoriesLoading) return <div>Loading...</div>;
     if (productsError) return <div>Error: {productsError.message}</div>;
     if (categoriesError) return <div>Error: {categoriesError.message}</div>;
