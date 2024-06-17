@@ -2,7 +2,7 @@ import FooterIcons from "./FooterIcons";
 const Footer = () => {
   return (
     <footer className="w-full bg-slate-500 text-white py-6">
-      <div className="container flex flex-col md:flex-row justify-center items-center">
+      <div className="container flex flex-col justify-center items-center mx-auto">
         <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pl-16">
           <h2 className="text-xl font-semibold">Contact</h2>
           <p>
@@ -28,7 +28,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-center md:text-center">
           <div className="flex flex-col items-center">
-            <p className="mb-4">
+            <p className="mb-2">
               Follow us on social media and other platforms!
             </p>
             <div className="flex justify-center">
@@ -74,9 +74,9 @@ const Footer = () => {
         <div className="h-full w-full mb-1 md:mb-0 p-1 pl-20"></div>
       </div>
 
-      <div className="container mx-auto text-center mt-4">
+      <div className="container mx-auto text-center mt-2">
         <hr className="w-1/2 h-px bg-gray-200 border-0 dark:bg-gray-700 mx-auto" />
-        <p className="text-white">&copy; 2021 All Rights Reserved</p>
+        <p className="mt-1 text-white">&copy; 2024 CSTORE</p>
       </div>
     </footer>
   );
