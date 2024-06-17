@@ -2,33 +2,32 @@ import FooterIcons from "./FooterIcons";
 const Footer = () => {
   return (
     <footer className="w-full bg-slate-500 text-white py-6">
-      <div className="container flex flex-col md:flex-row justify-center items-center">
+      <div className="container flex flex-col justify-center items-center mx-auto">
         <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pl-16">
           <h2 className="text-xl font-semibold">Contact</h2>
-          <p>
+          <p className="font-medium">
             Email:{" "}
-            <a
-              href="mailto:Info@Hemsida.se"
-              className="underline bg-slate-500 text-white"
-            >
+            <a href="mailto:Info@Hemsida.se" className="font-normal text-white">
               Info@Hemsida.se
             </a>
           </p>
-          <p>
+          <p className="font-medium">
             Phone:{" "}
-            <a
-              href="tel:+46322650780"
-              className="underline bg-slate-500 text-white"
-            >
+            <a href="tel:+46322650780" className="text-white font-normal">
               +46 322 650 780
             </a>
           </p>
-          <p>Address: Mattssons väg 4</p>
-          <p>44192 Tokholm</p>
+          <div className="flex flex-row">
+            <p className="font-medium mr-2">Address:</p>
+            <div>
+              <p>Mattssons väg 4</p>
+              <p>44192 Tokholm</p>
+            </div>
+          </div>
         </div>
         <div className="flex justify-center md:text-center">
           <div className="flex flex-col items-center">
-            <p className="mb-4">
+            <p className="mb-2">
               Follow us on social media and other platforms!
             </p>
             <div className="flex justify-center">
@@ -59,24 +58,15 @@ const Footer = () => {
                   <path d="M389.2 48h70.6L305.6 224.2 487 464H345L233.7 318.6 106.5 464H35.8L200.7 275.5 26.8 48H172.4L272.9 180.9 389.2 48zM364.4 421.8h39.1L151.1 88h-42L364.4 421.8z" />
                 </svg>
               </span>
-              <span className="[&>svg]:h-5 [&>svg]:w-5 m-2">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z" />
-                </svg>
-              </span>
             </div>
           </div>
         </div>
         <div className="h-full w-full mb-1 md:mb-0 p-1 pl-20"></div>
       </div>
 
-      <div className="container mx-auto text-center mt-4">
+      <div className="container mx-auto text-center mt-2">
         <hr className="w-1/2 h-px bg-gray-200 border-0 dark:bg-gray-700 mx-auto" />
-        <p className="text-white">&copy; 2021 All Rights Reserved</p>
+        <p className="mt-1 text-white">&copy; 2024 CSTORE</p>
       </div>
     </footer>
   );
