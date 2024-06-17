@@ -18,7 +18,9 @@ const Navigation = () => {
       <div className="container mx-auto flex md:justify-between items-center">
         {/* Logga synlig i desktop, dold i mobil */}
         <div className="hidden md:block text-white text-2xl">
-          <Link to="/">Logga</Link>
+          <Link to="/" className="hover:text-gray-400">
+            CSTORE
+          </Link>
         </div>
         <div className="hidden md:flex space-x-4 text-white">
           <Link to="/" className="hover:text-gray-400">
@@ -29,9 +31,12 @@ const Navigation = () => {
           </Link>
         </div>
         <div className="hidden md:flex items-center space-x-4">
-          <Link to="/cart" className="hover:text-gray-400 flex items-center text-white">
-            <FontAwesomeIcon icon={faCartShopping} className="mr-2" />
-            ({cartItemCount})
+          <Link
+            to="/cart"
+            className="hover:text-gray-400 flex items-center text-white"
+          >
+            <FontAwesomeIcon icon={faCartShopping} className="mr-2" />(
+            {cartItemCount})
           </Link>
         </div>
         {/* Hamburgermenyn och logga synliga i mobil */}
@@ -40,12 +45,15 @@ const Navigation = () => {
             <HamburgerMenu />
           </div>
           <div className="text-white text-2xl flex-grow text-center">
-            <Link to="/">Logga</Link>
+            <Link to="/">CSTORE</Link>
           </div>
           <div className="flex items-center">
-            <Link to="/cart" className="hover:text-gray-400 flex items-center text-white">
-              <FontAwesomeIcon icon={faCartShopping} className="mr-2" />
-              ({cartItemCount})
+            <Link
+              to="/cart"
+              className="hover:text-gray-400 flex items-center text-white"
+            >
+              <FontAwesomeIcon icon={faCartShopping} className="mr-2" />(
+              {cartItemCount})
             </Link>
           </div>
         </div>
