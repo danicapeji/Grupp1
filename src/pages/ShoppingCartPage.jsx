@@ -35,9 +35,9 @@ const CartPage = () => {
   return (
     <div className="container flex mx-auto justify-center my-10 h-fit">
       {cart.length === 0 ? (
-        <div>
+        <div className="my-20 flex flex-col items-center">
           <p>Your cart is empty</p>
-          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-6">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mt-4">
             <Link to="/shop">Back to shop</Link>
           </button>
         </div>
