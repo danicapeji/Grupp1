@@ -33,7 +33,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="container flex mx-auto justify-center mt-20 h-fit">
+    <div className="container flex mx-auto justify-center mt-10 h-fit">
       {cart.length === 0 ? (
         <div>
           <p>Your cart is empty</p>
