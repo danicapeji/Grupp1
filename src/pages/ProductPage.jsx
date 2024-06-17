@@ -32,6 +32,8 @@ const ProductPage = () => {
         <span>&nbsp;/&nbsp;</span>
         <Link to="/shop" className="hover:text-gray-500">Shop</Link>
         <span>&nbsp;/&nbsp;</span>
+        <Link key={product.category} to={`/shop?category=${product.category}`} className="hover:text-gray-500">{product.category}</Link>
+        <span>&nbsp;/&nbsp;</span>
         <span>{product.title}</span>
       </div>
 
