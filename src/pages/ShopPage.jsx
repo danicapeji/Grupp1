@@ -36,7 +36,6 @@ const ShopPage = () => {
         setCurrentPage(pageNumber);
     };
 
-    // Add a conditional check to ensure products is defined before filtering
     const filteredProducts = products ? 
         selectedCategory === 'all' ? products : products.filter(product => product.category === selectedCategory)
         : [];
@@ -58,10 +57,10 @@ const ShopPage = () => {
                 <Link to="/shop">Shop</Link>
             </div>
 
-            <div className="mt-4 flex space-x-2">
+            <div className="mt-4 flex space-x-2 overflow-x-auto">
                 <button
                     onClick={() => handleCategoryClick('all')}
-                    className={`p-2 border ${selectedCategory === 'all' ? 'bg-blue-500 text-white' : 'bg-white'}`}
+                    className={`p-2 border rounded ${selectedCategory === 'all' ? 'bg-blue-500 text-white' : 'bg-white text-black hover:bg-blue-100 transition-colors duration-300'}`}
                 >
                     All products
                 </button>
@@ -69,27 +68,26 @@ const ShopPage = () => {
                     <button
                         key={category}
                         onClick={() => handleCategoryClick(category)}
-                        className={`p-2 border ${selectedCategory === category ? 'bg-blue-500 text-white' : 'bg-white'}`}
+                        className={`p-2 border rounded ${selectedCategory === category ? 'bg-blue-500 text-white' : 'bg-white text-black hover:bg-blue-100 transition-colors duration-300'}`}
                     >
                         {category}
                     </button>
                 ))}
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-1 md:gap-4 mt-4 mb-20">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-5 gap-3 md:gap-5 mt-4 mb-4">
                 {currentProducts.map((product) => (
                     <ProductCard key={product.id} product={product} />
                 ))}
             </div>
 
-            <div className="flex justify-center mt-4">
+            <div className="flex justify-center mt-4 space-x-1">
                 {Array.from({ length: totalPages }, (_, index) => (
                     <button
                         key={index}
                         onClick={() => handlePageChange(index + 1)}
-                        className={`p-2 border ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-white'}`}
-                   
-                        >
+                        className={`py-1 px-2 border rounded ${currentPage === index + 1 ? 'bg-blue-500 text-white' : 'bg-white text-black hover:bg-blue-100 transition-colors duration-300'}`}
+                    >
                         {index + 1}
                     </button>
                 ))}

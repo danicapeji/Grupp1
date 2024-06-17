@@ -1,8 +1,9 @@
+import FooterIcons from "./FooterIcons";
 const Footer = () => {
   return (
-    <footer className="w-full bg-slate-500 text-white py-2">
-      <div className="container flex flex-col md:flex-row justify-between items-center">
-        <div className="h-full w-full mb-4 md:mb-0 p-1 pl-16">
+    <footer className="w-full bg-slate-500 text-white py-6">
+      <div className="container flex flex-col md:flex-row justify-center items-center">
+        <div className="w-full md:w-1/2 mb-4 md:mb-0 md:pl-16">
           <h2 className="text-xl font-semibold">Contact</h2>
           <p>
             Email:{" "}
@@ -25,12 +26,12 @@ const Footer = () => {
           <p>Address: Mattssons väg 4</p>
           <p>44192 Tokholm</p>
         </div>
-        <div className="container flex mx-auto mx:justify-center md:text-center mt-4">
-          <div className="flex flex-col md:flex-column text-center">
+        <div className="flex justify-center md:text-center">
+          <div className="flex flex-col items-center">
             <p className="mb-4">
               Follow us on social media and other platforms!
             </p>
-            <div className="flex justify-center text-center">
+            <div className="flex justify-center">
               <span className="[&>svg]:h-5 [&>svg]:w-5 m-2">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -70,10 +71,11 @@ const Footer = () => {
             </div>
           </div>
         </div>
+        <div className="h-full w-full mb-1 md:mb-0 p-1 pl-20"></div>
       </div>
-      <hr className="w-1/2 h-px bg-gray-200 border-0 dark:bg-gray-700 mx-auto" />
 
       <div className="container mx-auto text-center mt-4">
+        <hr className="w-1/2 h-px bg-gray-200 border-0 dark:bg-gray-700 mx-auto" />
         <p className="text-white">&copy; 2021 All Rights Reserved</p>
       </div>
     </footer>

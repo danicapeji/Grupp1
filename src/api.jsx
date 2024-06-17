@@ -23,3 +23,17 @@ export const fetchProductById = async (id) => {
   }
   return response.json();
 };
+
+
+export const fetchCategoriesWithImages = async () => {
+  const categories = await fetchCategories();
+  const products = await fetchProducts();
+
+  return categories.map(category => {
+    const product = products.find(p => p.category === category);
+    return {
+      name: category,
+      imageUrl: product ? product.image : 'default_image_url.jpg' 
+    };
+  });
+};
